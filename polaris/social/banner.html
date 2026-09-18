@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Polaris — Social banner</title>
+  <link rel="icon" href="../assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./banner.css">
+</head>
+<body>
+  <div class="stage">
+    <main class="banner" aria-label="Banner giới thiệu Polaris">
+      <header>
+        <div class="brand"><img src="../assets/logo.png" alt="" width="38" height="38"><span>Polaris</span><span class="version">1.0.0</span></div>
+        <span class="byline">MÃ NGUỒN MỞ · TỰ TRIỂN KHAI</span>
+      </header>
+      <div class="content">
+        <section class="copy">
+          <h1>Mọi mô hình.<br><span>Một điểm kết nối.</span></h1>
+          <p>Một gateway cho các công cụ lập trình AI.<br>Bạn sáng tạo. Polaris lo kết nối.</p>
+          <div class="features"><span>Định tuyến thông minh</span><span>Tự động dự phòng</span></div>
+        </section>
+        <div class="diagram" role="img" aria-label="Công cụ AI kết nối qua Polaris đến OpenAI, Anthropic và Google.">
+          <div class="diagram-caption" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><span>MỘT GATEWAY. NHIỀU KHẢ NĂNG.</span></div>
+          <div class="routing" aria-hidden="true">
+            <svg class="wires" viewBox="0 0 386 240" fill="none"><path d="M74 120H117M217 120H248M248 50V190M248 50H272M248 120H272M248 190H272"/></svg>
+            <div class="tool"><span class="terminal">&gt;_</span><span>Công cụ AI</span></div>
+            <div class="gateway"><img src="../assets/logo.png" alt="" width="47" height="47"><strong>Polaris</strong></div>
+            <div class="providers">
+              <div><img src="./assets/openai.svg" alt="" width="25" height="25"><span>OpenAI</span></div>
+              <div><img src="./assets/anthropic.svg" alt="" width="25" height="25"><span>Anthropic</span></div>
+              <div><img src="./assets/google.svg" alt="" width="25" height="25"><span>Google</span></div>
+            </div>
+          </div>
+          <div class="diagram-footer" aria-hidden="true"><span class="status-dot"></span>Giao thức gốc. Kết nối liền mạch.</div>
+        </div>
+      </div>
+      <footer><div class="facts"><span><strong>23</strong> nhà cung cấp</span><span><strong>15</strong> ngôn ngữ</span></div><div class="destination">nguywnben.github.io/polaris<span aria-hidden="true">↗</span></div></footer>
+    </main>
+  </div>
+  <script type="module" src="./banner.js"></script>
+  <script>
+    // Scale the fixed artboard to the viewport without changing its composition.
+    function fitBanner() {
+      const scale = Math.min(innerWidth / 1200, innerHeight / 630);
+      document.documentElement.style.setProperty('--scale', scale);
+    }
+    fitBanner();
+    addEventListener('resize', fitBanner);
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "vi": {
+    "label": "Banner giới thiệu Polaris 1.0.0",
+    "byline": "MÃ NGUỒN MỞ · TỰ TRIỂN KHAI",
+    "headline": ["Mọi mô hình.", "Một điểm kết nối."],
+    "intro": ["Một gateway cho các công cụ lập trình AI.", "Bạn sáng tạo. Polaris lo kết nối."],
+    "features": ["Định tuyến thông minh", "Tự động dự phòng"],
+    "diagram": "Công cụ AI kết nối qua Polaris đến OpenAI, Anthropic và Google.",
+    "caption": "MỘT GATEWAY. NHIỀU KHẢ NĂNG.",
+    "tools": "Công cụ AI",
+    "note": "Giao thức gốc. Kết nối liền mạch.",
+    "providers": "nhà cung cấp",
+    "languages": "ngôn ngữ"
+  },
+  "en": {
+    "label": "Polaris 1.0.0 introduction banner",
+    "byline": "OPEN SOURCE · SELF-HOSTED",
+    "headline": ["Every model.", "One connection."],
+    "intro": ["One gateway for your AI coding tools.", "You build. Polaris connects."],
+    "features": ["Smart routing", "Automatic fallback"],
+    "diagram": "AI tools connect through Polaris to OpenAI, Anthropic and Google.",
+    "caption": "ONE GATEWAY. MORE POSSIBILITIES.",
+    "tools": "AI tools",
+    "note": "Native protocols. Seamless connections.",
+    "providers": "providers",
+    "languages": "languages"
+  }
+}
