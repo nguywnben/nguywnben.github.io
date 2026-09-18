@@ -43,6 +43,13 @@ def asset(path, x, y, size):
 def dot(x, y, size, color):
     draw.ellipse((round(x*SCALE),round(y*SCALE),round((x+size)*SCALE),round((y+size)*SCALE)), fill=color)
 
+def text_dot(x, text_y, font_size):
+    # Center on the lowercase body, independently of accents and descenders.
+    font = ImageFont.truetype(str(args.fonts / 'GoogleSans-400.ttf'), round(font_size * SCALE))
+    _, top, _, bottom = font.getbbox('x', anchor='la')
+    center_y = text_y + (top + bottom) / (2 * SCALE)
+    dot(x, center_y - 2.5, 5, '#137333')
+
 logo = SOCIAL.parent / 'assets' / 'logo.png'
 asset(logo, 48, 44, 38)
 text('Polaris', 97, 41, 32, 600, tracking=-1.28)
@@ -54,9 +61,9 @@ text(copy['headline'][0], 48, 171, 61, 500, tracking=-2.44)
 text(copy['headline'][1], 48, 242, 61, 500, '#666666', -2.44)
 text(copy['intro'][0], 48, 340, 21, 400, '#666666')
 text(copy['intro'][1], 48, 373, 21, 400, '#666666')
-dot(48, 438, 5, '#137333')
+text_dot(48, 428, 14)
 text(copy['features'][0], 61, 428, 14, 400, '#444444')
-dot(228, 438, 5, '#137333')
+text_dot(228, 428, 14)
 text(copy['features'][1], 241, 428, 14, 400, '#444444')
 
 box(718, 148, 434, 329, '#fafafa', '#dedede', 12)
@@ -80,7 +87,7 @@ for name, label, top in [('openai','OpenAI',209),('anthropic','Anthropic',279),(
     asset(args.logos / f'{name}-4x.png',1023,top+11,25)
     text(label,1055,top+15,12)
 line([(742,430),(1128,430)],'#e6e6e6')
-dot(742,449,5,'#137333')
+text_dot(742,441,11)
 text(copy['note'],754,441,11,400,'#666666')
 
 line([(48,540),(1152,540)],'#e7e7e7')

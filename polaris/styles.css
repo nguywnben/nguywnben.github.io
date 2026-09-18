@@ -17,7 +17,7 @@
 .language-trigger > .language-chevron { width: 14px; height: 14px; transition: transform .16s ease; }
 .language-trigger[aria-expanded=true] { background: var(--muted); }
 .language-trigger[aria-expanded=true] .language-chevron { transform: rotate(180deg); }
-.language-menu { position: absolute; inset-inline-end: 0; top: calc(100% + 9px); width: 218px; max-width: calc(100vw - 36px); max-height: min(392px, calc(100dvh - 90px)); overflow-y: auto; overscroll-behavior: contain; padding: 6px; background: var(--surface); border-radius: 10px; box-shadow: 0 8px 30px rgb(0 0 0 / .13); scrollbar-width: thin; scrollbar-color: var(--strong) transparent; }
+.language-menu { position: absolute; inset-inline-end: 0; top: calc(100% + 9px); width: 160px; max-width: calc(100vw - 36px); max-height: min(392px, calc(100dvh - 90px)); overflow-y: auto; overscroll-behavior: contain; padding: 6px; background: var(--surface); border-radius: 10px; box-shadow: 0 8px 30px rgb(0 0 0 / .13); scrollbar-width: thin; scrollbar-color: var(--strong) transparent; }
 [data-theme=dark] .language-menu { box-shadow: 0 10px 32px rgb(0 0 0 / .45); }
 .language-menu button { width: 100%; min-height: 36px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 10px; border: 0; border-radius: 6px; background: transparent; color: var(--secondary); text-align: start; font-size: 13px; line-height: 1.4; font-weight: 400; }
 .language-menu button .icon { width: 15px; height: 15px; visibility: hidden; }
