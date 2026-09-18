@@ -1,5 +1,5 @@
+import { version, providers } from "./release.js";
 const languages = { en:'English', 'zh-CN':'中文(简体)', 'zh-TW':'中文(繁體)', de:'Deutsch', es:'Español', fr:'Français', id:'Indonesia', it:'Italiano', ja:'日本語', ko:'한국어', pt:'Português', ru:'Русский', th:'ภาษาไทย', tr:'Türkçe', vi:'Tiếng Việt' };
-const providers = [['google-antigravity','Google Antigravity'],['google-ai-studio','Google AI Studio'],['claude-code','Claude Code'],['claude-platform','Claude Platform'],['codex','Codex'],['openai-platform','OpenAI Platform'],['grok-build','Grok Build'],['spacexai-console','SpaceXAI Console'],['ollama','Ollama']];
 const languageTrigger = document.querySelector('#language');
 const languageMenu = document.querySelector('#language-menu');
 const languageLabel = document.querySelector('#language-label');
@@ -34,7 +34,7 @@ for (const [code, label] of Object.entries(languages)) {
 }
 for (const [slug, name] of providers) {
   const provider = document.createElement('div'); provider.className = 'provider';
-  const logo = document.createElement('img'); logo.src = `./assets/providers/${slug}-logo.png`; logo.alt = ''; logo.width = 28; logo.height = 28; logo.loading = 'lazy';
+  const logo = document.createElement('img'); logo.src = `./assets/providers/${slug}.png`; logo.alt = ''; logo.width = 28; logo.height = 28; logo.loading = 'lazy';
   const label = document.createElement('span'); label.textContent = name; provider.append(logo,label); document.querySelector('#provider-grid').append(provider);
 }
 
@@ -165,7 +165,8 @@ setupTabs(document.querySelector('.demo-tabs'),tab => {
 });
 function renderCommands() {
   const copy = activeOS === 'windows' ? 'Copy-Item deploy/compose.env.example .env' : 'cp deploy/compose.env.example .env';
-  document.querySelector('#install-code').textContent = `git clone --branch v1.5.0 --depth 1 https://github.com/nguywnben/polaris.git\ncd polaris\n${copy}\ndocker compose -f deploy/docker-compose.yml config --quiet\ndocker compose -f deploy/docker-compose.yml pull\ndocker compose -f deploy/docker-compose.yml up --detach --wait --wait-timeout 60`;
+  const ready = activeOS === 'windows' ? 'Invoke-WebRequest http://127.0.0.1:4283/ready' : 'curl --fail http://127.0.0.1:4283/ready';
+  document.querySelector('#install-code').textContent = `git clone --branch v${version} --depth 1 https://github.com/nguywnben/polaris.git\ncd polaris\n${copy}\ndocker compose -f deploy/docker-compose.yml config --quiet\ndocker compose -f deploy/docker-compose.yml pull\ndocker compose -f deploy/docker-compose.yml up --detach --wait --wait-timeout 60\ndocker compose -f deploy/docker-compose.yml ps\n${ready}`;
 }
 setupTabs(document.querySelector('.os-tabs'),tab => {
   activeOS = tab.dataset.os; document.querySelector('#install-code-panel').setAttribute('aria-labelledby',tab.id); renderCommands();

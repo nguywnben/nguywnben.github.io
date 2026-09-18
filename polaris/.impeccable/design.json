@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-18T00:00:00Z",
+  "title": "Design System: Polaris",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "language-menu-light",
+        "value": "0 8px 30px rgb(0 0 0 / .13)",
+        "purpose": "Floating language menu in light mode."
+      },
+      {
+        "name": "language-menu-dark",
+        "value": "0 10px 32px rgb(0 0 0 / .45)",
+        "purpose": "Floating language menu in dark mode."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transform",
+        "value": "transform .16s ease",
+        "purpose": "Short control feedback; disabled under reduced motion."
+      },
+      {
+        "name": "icon-transition",
+        "value": "transform .16s ease",
+        "purpose": "Chevron and text-link icon feedback; disabled under reduced motion."
+      },
+      {
+        "name": "console-entrance",
+        "value": "preview-arrive .8s cubic-bezier(.16,1,.3,1) both",
+        "purpose": "Visible-from-start console entrance; disabled under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "value": "1100px",
+        "name": "compact-desktop"
+      },
+      {
+        "value": "800px",
+        "name": "tablet"
+      },
+      {
+        "value": "540px",
+        "name": "mobile"
+      },
+      {
+        "value": "1500px",
+        "name": "wide"
+      }
+    ]
+  },
+  "components": [
+    {
+      "description": "Solid neutral installation action.",
+      "css": ".ds-primary{font:550 14px \"Google Sans\",\"Segoe UI\",Arial,sans-serif;min-height:49px;padding:12px 22px;border:1px solid var(--accent,#111);border-radius:var(--radius,8px);background:var(--accent,#111);color:var(--contrast,#fff);cursor:pointer;transition:transform .16s ease}.ds-primary:hover{background:var(--accent-hover,#2f2f2f);border-color:var(--accent-hover,#2f2f2f)}.ds-primary:focus-visible{outline:2px solid var(--focus,#1a73e8);outline-offset:4px}.ds-primary:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}",
+      "html": "<button class=\"ds-primary\">Get started</button>",
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary"
+    },
+    {
+      "description": "Bordered source or documentation action.",
+      "css": ".ds-secondary{font:550 14px \"Google Sans\",\"Segoe UI\",Arial,sans-serif;min-height:49px;padding:12px 22px;border:1px solid var(--strong,#d8d8d8);border-radius:var(--radius,8px);background:var(--bg,#fff);color:var(--text,#111);cursor:pointer;transition:transform .16s ease}.ds-secondary:hover{background:var(--control-hover,#f4f4f4)}.ds-secondary:focus-visible{outline:2px solid var(--focus,#1a73e8);outline-offset:4px}.ds-secondary:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}",
+      "html": "<button class=\"ds-secondary\">View source</button>",
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary"
+    },
+    {
+      "css": ".ds-nav{display:inline-block;padding:8px 12px;border-radius:var(--radius,8px);font:500 13px \"Google Sans\",\"Segoe UI\",Arial,sans-serif;color:var(--secondary,#666);background:transparent;text-decoration:none}.ds-nav:hover,.ds-nav:active{color:var(--text,#111);background:transparent}.ds-nav:focus-visible{outline:2px solid var(--secondary,#666);outline-offset:2px}",
+      "description": "Foreground-only hover within the compact header.",
+      "name": "Header navigation",
+      "kind": "nav",
+      "html": "<nav aria-label=\"Example navigation\"><a class=\"ds-nav\" href=\"#features\">Features</a><a class=\"ds-nav\" href=\"#providers\">Providers</a></nav>"
+    },
+    {
+      "css": ".ds-language{padding:10px 17px;min-height:43px;border:1px solid var(--border,#e7e7e7);border-radius:var(--radius,8px);background:var(--bg,#fff);color:var(--text,#111);font:400 13px \"Google Sans\",\"Segoe UI\",Arial,sans-serif;cursor:pointer}.ds-language[aria-pressed=true]{background:var(--accent,#111);color:var(--contrast,#fff);border-color:var(--accent,#111)}.ds-language:not([aria-pressed=true]):hover{background:var(--muted,#f6f6f6);border-color:var(--strong,#d8d8d8)}.ds-language:focus-visible{outline:2px solid var(--focus,#1a73e8);outline-offset:4px}",
+      "description": "Wrapping language selection with an inverted selected state.",
+      "name": "Language choice",
+      "kind": "button",
+      "html": "<button class=\"ds-language\" aria-pressed=\"true\">English</button> <button class=\"ds-language\" aria-pressed=\"false\">Vietnamese</button>"
+    },
+    {
+      "description": "Three sidebar tabs become horizontal on mobile; the live preview adds tab semantics and keyboard behavior.",
+      "css": ".ds-preview-tabs{display:flex;flex-direction:column;gap:4px;max-width:208px}.ds-preview{display:flex;align-items:center;gap:10px;padding:11px 12px;border:0;border-radius:var(--radius,8px);text-align:start;background:transparent;color:var(--secondary,#666);font:500 12px/1.4 \"Google Sans\",\"Segoe UI\",Arial,sans-serif;cursor:pointer}.ds-preview[aria-pressed=true]{background:var(--accent,#111);color:var(--contrast,#fff)}.ds-preview:not([aria-pressed=true]):hover{background:var(--control-hover,#f4f4f4);color:var(--text,#111)}.ds-preview:focus-visible{outline:2px solid var(--focus,#1a73e8);outline-offset:4px}@media(max-width:800px){.ds-preview-tabs{flex-direction:row;max-width:none;gap:5px}.ds-preview{font-size:11px;padding:10px}}",
+      "html": "<div class=\"ds-preview-tabs\"><button class=\"ds-preview\" aria-pressed=\"true\">Models &amp; routing</button><button class=\"ds-preview\" aria-pressed=\"false\">Credentials</button><button class=\"ds-preview\" aria-pressed=\"false\">Activity</button></div>",
+      "name": "Interactive console tab appearance",
+      "kind": "button",
+      "refersTo": "preview-tab"
+    }
+  ],
+  "narrative": {
+    "overview": "Extend the existing Polaris console identity. White space, readable Google Sans typography, neutral surfaces and thin borders give the landing page its restrained character. This is a refinement of the established system; the release update introduces no new visual concept.\n\nThe landing page uses the user-preferred interactive HTML console preview to explain routing, credentials and activity. Social banners retain the approved white composition, original marks and light gateway node. Product facts and asset provenance live in `PRODUCT.md`, `assets/SOURCES.md` and `social/README.md`.",
+    "keyCharacteristics": [
+      "Neutral light and dark themes with original brand assets.",
+      "Strong typographic hierarchy and generous space around product evidence.",
+      "Thin borders, gently curved controls and explicit interaction states.",
+      "Responsive visitor content with visible focus and reduced-motion support."
+    ],
+    "rules": [
+      {
+        "section": "colors",
+        "name": "The Foreground Hover Rule",
+        "body": "Header and footer links change foreground contrast on hover without gaining a background fill. Preserve explicit selected and expanded states. Content controls retain their defined surface feedback."
+      }
+    ],
+    "dos": [
+      "**Do** retain the existing Google Sans, original Polaris star and neutral light/dark identity.",
+      "**Do** keep the interactive console frame, notes and dividers stationary across tab changes.",
+      "**Do** translate the preview content and preserve its illustrative-data labels in every visitor locale.",
+      "**Do** maintain banner parity across both languages and HTML/PNG outputs.",
+      "**Do** keep repository documentation in English and visitor-facing copy localized."
+    ],
+    "donts": [
+      "**Don't** introduce background hover fills on header or footer links.",
+      "**Don't** present illustrative console content as actual captures, live data or production evidence.",
+      "**Don't** replace the approved white banner gateway node or distort source brand marks.",
+      "**Don't** assume longer translations fit; verify wrapping and mobile overflow."
+    ]
+  }
+}

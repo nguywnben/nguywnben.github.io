@@ -8,7 +8,7 @@ The homepage and landing-page repository for projects by **nguywnben**. Each pro
 
 | Project | Description | Landing page | Source code |
 | --- | --- | --- | --- |
-| Polaris | A self-hosted AI gateway with routing, protocol translation and provider fallback. Its landing page supports 15 languages. | [Explore Polaris](https://nguywnben.github.io/polaris/) | [nguywnben/polaris](https://github.com/nguywnben/polaris) |
+| Polaris 1.0.0 | A self-hosted AI gateway with 23 providers, routing, protocol translation and fallback. Its landing page supports 15 languages. | [Explore Polaris](https://nguywnben.github.io/polaris/) | [nguywnben/polaris](https://github.com/nguywnben/polaris) |
 
 This repository contains project websites. Each application's source code is maintained in a separate repository.
 
@@ -29,10 +29,12 @@ Use English for repository documentation, README files, code comments, commit me
     ├── index.html
     ├── styles.css
     ├── app.js
+    ├── release.js          # Release version and provider catalog
     ├── preferences.js
     ├── assets/
     ├── locales/            # 15 translations
     ├── tests/
+    ├── social/             # English/Vietnamese banners and PNG exports
     └── README.md
 ```
 
