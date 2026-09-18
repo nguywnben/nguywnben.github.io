@@ -135,12 +135,21 @@ function syncTheme() {
   document.querySelector('#theme use').setAttribute('href',dark ? '#sun' : '#moon');
   document.querySelector('meta[name=theme-color]').content = dark ? '#121212' : '#ffffff';
 }
+function applyTheme(theme) {
+  const root = document.documentElement;
+  root.classList.add('theme-changing');
+  root.dataset.theme = theme;
+  syncTheme();
+  // Resolve the new palette without transitions before restoring hover effects.
+  void root.offsetHeight;
+  root.classList.remove('theme-changing');
+}
 document.querySelector('#theme').addEventListener('click',() => {
   const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = next; storage.set('polaris-site-theme',next); syncTheme();
+  applyTheme(next); storage.set('polaris-site-theme',next);
 });
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change',event => {
-  if (!storage.get('polaris-site-theme')) { document.documentElement.dataset.theme = event.matches ? 'dark' : 'light'; syncTheme(); }
+  if (!storage.get('polaris-site-theme')) applyTheme(event.matches ? 'dark' : 'light');
 });
 function setupTabs(container, onSelect) {
   const tabs = [...container.querySelectorAll('[role=tab]')];
